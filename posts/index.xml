@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on My tech junkyard</title>
-    <link>http://example.org/posts/</link>
-    <description>Recent content in Posts on My tech junkyard</description>
+    <title>Posts on My tech notes</title>
+    <link>https://arnaldomendoncaf.github.io/posts/</link>
+    <description>Recent content in Posts on My tech notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Feb 2023 21:59:34 +0100</lastBuildDate><atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Feb 2023 21:59:34 +0100</lastBuildDate><atom:link href="https://arnaldomendoncaf.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Hugo</title>
-      <link>http://example.org/posts/using-hugo/</link>
+      <link>https://arnaldomendoncaf.github.io/posts/using-hugo/</link>
       <pubDate>Tue, 14 Feb 2023 21:59:34 +0100</pubDate>
       
-      <guid>http://example.org/posts/using-hugo/</guid>
+      <guid>https://arnaldomendoncaf.github.io/posts/using-hugo/</guid>
       <description>I decided to start logging some of my learnings in a site. So I remembered of a tool called Hugo that may help me to do it.
 Hugo is a popular static site generator written in Go. In this post, I will walk you through the process of installing Hugo, configuring and publishing your first post.
 Nothing better than start my tech journal with a post on how to use the tool that I&amp;rsquo;ll use to write my tech journal.</description>
