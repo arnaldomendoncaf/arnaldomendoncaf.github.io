@@ -6,7 +6,17 @@
     <description>Recent content in Posts on My tech notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Feb 2023 21:59:34 +0100</lastBuildDate><atom:link href="https://arnaldomendoncaf.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Feb 2023 17:02:39 +0000</lastBuildDate><atom:link href="https://arnaldomendoncaf.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Publish your blog made with Hugo on GitHub Pages</title>
+      <link>https://arnaldomendoncaf.github.io/posts/hugo-publish-to-github-pages/</link>
+      <pubDate>Wed, 15 Feb 2023 17:02:39 +0000</pubDate>
+      
+      <guid>https://arnaldomendoncaf.github.io/posts/hugo-publish-to-github-pages/</guid>
+      <description>So now you decided to publish your recently created blog on GitHub Pages. Well, this tutorial will help you do it, maybe not in the best way, as I am also a beginner, but it certainly works!
+Create your GitHub Pages repository There is not much to say about it, you will just create a new repository on your GitHub account. The important thing is that this repository needs a special name, that is:</description>
+    </item>
+    
     <item>
       <title>Using Hugo</title>
       <link>https://arnaldomendoncaf.github.io/posts/using-hugo/</link>
