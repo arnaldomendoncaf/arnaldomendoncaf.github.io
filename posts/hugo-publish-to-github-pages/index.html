@@ -4,7 +4,7 @@
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Publish your blog made with Hugo on GitHub Pages | My tech notes</title>
 <meta name="keywords" content="">
 <meta name="description" content="So now you decided to publish your recently created blog on GitHub Pages. Well, this tutorial will help you do it, maybe not in the best way, as I am also a beginner, but it certainly works!
@@ -57,7 +57,69 @@ Create your GitHub Pages repository There is not much to say about it, you will 
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:title" content="Publish your blog made with Hugo on GitHub Pages" />
+<meta property="og:description" content="So now you decided to publish your recently created blog on GitHub Pages. Well, this tutorial will help you do it, maybe not in the best way, as I am also a beginner, but it certainly works!
+Create your GitHub Pages repository There is not much to say about it, you will just create a new repository on your GitHub account. The important thing is that this repository needs a special name, that is:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://arnaldomendoncaf.github.io/posts/hugo-publish-to-github-pages/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-15T17:02:39+00:00" />
+<meta property="article:modified_time" content="2023-02-15T17:02:39+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Publish your blog made with Hugo on GitHub Pages"/>
+<meta name="twitter:description" content="So now you decided to publish your recently created blog on GitHub Pages. Well, this tutorial will help you do it, maybe not in the best way, as I am also a beginner, but it certainly works!
+Create your GitHub Pages repository There is not much to say about it, you will just create a new repository on your GitHub account. The important thing is that this repository needs a special name, that is:"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://arnaldomendoncaf.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Publish your blog made with Hugo on GitHub Pages",
+      "item": "https://arnaldomendoncaf.github.io/posts/hugo-publish-to-github-pages/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Publish your blog made with Hugo on GitHub Pages",
+  "name": "Publish your blog made with Hugo on GitHub Pages",
+  "description": "So now you decided to publish your recently created blog on GitHub Pages. Well, this tutorial will help you do it, maybe not in the best way, as I am also a beginner, but it certainly works!\nCreate your GitHub Pages repository There is not much to say about it, you will just create a new repository on your GitHub account. The important thing is that this repository needs a special name, that is:",
+  "keywords": [
+    
+  ],
+  "articleBody": "So now you decided to publish your recently created blog on GitHub Pages. Well, this tutorial will help you do it, maybe not in the best way, as I am also a beginner, but it certainly works!\nCreate your GitHub Pages repository There is not much to say about it, you will just create a new repository on your GitHub account. The important thing is that this repository needs a special name, that is:\nyour_username_here.github.io In my case, the repository name is arnaldomendoncaf.github.io. If you choose any other name it won’t work.\nThe repository must also be public if you don’t use GitHub Enterprise.\nSet up your local copy of the repository Remember our first tutorial on Hugo. The blog name was quickstart, so the directory tree starts there. Initialize a repository on the public folder:\ncd $(pwd)/quickstart/public git init git remote add origin git@github.com:${GH_USERNAME}/${GH_USERNAME}.github.io Publish your posts Now that everything is set, you can publish your posts. First you will need to make sure your post is not in draft, as the pages for the draft posts will not be generated. So pick one post and edit it to change the draft property to false\nsed -e '0,/^draft: true/ s//draft: false/g' \\ quickstart/content/posts/using-hugo.md The command above will change just the first occurrence of draft: true. With that, the post is ready to be published.\nTo generate the page, run hugo as in\npodman run --rm -ti -v $(pwd)/quickstart:/src \\ docker.io/klakegg/hugo Start building sites … hugo v0.107.0-2221b5b30a285d01220a26a82305906ad3291880 linux/amd64 BuildDate=2022-11-24T13:59:45Z VendorInfo=hugoguru | EN -------------------+----- Pages | 10 Paginator pages | 0 Non-page files | 0 Static files | 3 Processed images | 0 Aliases | 2 Sitemaps | 1 Cleaned | 0 Total in 50 ms If you go back to that public folder, you will see that there are a lot of files to be committed. Go there and commit them.\ncd quickstart/public git status git add . git commit -m \"Publishing my first content to GitHub Pages\" git push -u origin main After pushing to GitHub, it may take some time for your blog to be updated. So test your site on ${GH_USERNAME}.github.io, if you receie a 404 status code wait a bit and try again in a couple of minutes.\nConclusion GitHub pages is a free way to publish your blog, and also to use git to keep control of its version.\nAlso remember that the HTML file for draft pages won’t be generated.\n",
+  "wordCount" : "406",
+  "inLanguage": "en",
+  "datePublished": "2023-02-15T17:02:39Z",
+  "dateModified": "2023-02-15T17:02:39Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://arnaldomendoncaf.github.io/posts/hugo-publish-to-github-pages/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My tech notes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://arnaldomendoncaf.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">

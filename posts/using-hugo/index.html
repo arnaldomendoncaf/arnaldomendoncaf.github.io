@@ -4,7 +4,7 @@
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Using Hugo | My tech notes</title>
 <meta name="keywords" content="">
 <meta name="description" content="I decided to start logging some of my learnings in a site. So I remembered of a tool called Hugo that may help me to do it.
@@ -58,7 +58,71 @@ Nothing better than start my tech journal with a post on how to use the tool tha
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:title" content="Using Hugo" />
+<meta property="og:description" content="I decided to start logging some of my learnings in a site. So I remembered of a tool called Hugo that may help me to do it.
+Hugo is a popular static site generator written in Go. In this post, I will walk you through the process of installing Hugo, configuring and publishing your first post.
+Nothing better than start my tech journal with a post on how to use the tool that I&rsquo;ll use to write my tech journal." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://arnaldomendoncaf.github.io/posts/using-hugo/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-14T21:59:34+01:00" />
+<meta property="article:modified_time" content="2023-02-14T21:59:34+01:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using Hugo"/>
+<meta name="twitter:description" content="I decided to start logging some of my learnings in a site. So I remembered of a tool called Hugo that may help me to do it.
+Hugo is a popular static site generator written in Go. In this post, I will walk you through the process of installing Hugo, configuring and publishing your first post.
+Nothing better than start my tech journal with a post on how to use the tool that I&rsquo;ll use to write my tech journal."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://arnaldomendoncaf.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Using Hugo",
+      "item": "https://arnaldomendoncaf.github.io/posts/using-hugo/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Using Hugo",
+  "name": "Using Hugo",
+  "description": "I decided to start logging some of my learnings in a site. So I remembered of a tool called Hugo that may help me to do it.\nHugo is a popular static site generator written in Go. In this post, I will walk you through the process of installing Hugo, configuring and publishing your first post.\nNothing better than start my tech journal with a post on how to use the tool that I\u0026rsquo;ll use to write my tech journal.",
+  "keywords": [
+    
+  ],
+  "articleBody": "I decided to start logging some of my learnings in a site. So I remembered of a tool called Hugo that may help me to do it.\nHugo is a popular static site generator written in Go. In this post, I will walk you through the process of installing Hugo, configuring and publishing your first post.\nNothing better than start my tech journal with a post on how to use the tool that I’ll use to write my tech journal.\nInstalling Hugo Hugo has support for Windows, Linux, BSD and MacOS. This tutorial will focus on Linux. Said this, there are some ways to install it on linux, like package manager, binary, compiling or container. Here I’ll show you how to use the container but also how to install from source.\nInstalling from source Installing from source is not hard if you have experience with Go. You will need Go version 1.18 or later.\ngo install -tags extended github.com/gohugoio/hugo@latest hugo version It will take some time to download and compile everything.\nUsing as a container As a personal preference, I’ll use Podman, but you can run the same comands with Docker as well.\nFirst, we will Pull the image. The official documentation points to the repository klakegg/hugo.\npodman pull docker.io/klakegg/hugo podman run --rm -ti docker.io/klakegg/hugo version From here on, I’ll only use the container but the commands easily translate to the binary.\nCreate your first site So, let’s get to what matters. Here I’ll show you how to create and configure your first site.\nFirst, you will need to make hugo bootstrap your site.\npodman run --rm -ti -v $(pwd):/src docker.io/klakegg/hugo new site quickstart If you are not used to Docker or Podman, the -v $(pwd):/src mounts the current directory on your host machine as the /src on your container. Hugo’s container workdirectory is the /src so the command you ran will execute in this directory.\nAfter the container exit, you can see that Hugo created a directory called quickstart in your current directory.\nIf you take a look at the command output, you will see that Hugo tells you to install a new theme\nCongratulations! Your new Hugo site is created in /src/xpto. Just a few more steps and you're ready to go: 1. Download a theme into the same-named folder. Choose a theme from https://themes.gohugo.io/ or create your own with the \"hugo new theme \" command. 2. Perhaps you want to add some content. You can add single files with \"hugo new /.\". 3. Start the built-in live server via \"hugo server\". So, take your time to visit https://themes.gohugo.io/ and choose the theme that best suits you. Here I’ll use the PaperMod theme. By their instruction, you just need to use Git to install it.\ncd quickstart git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth=1 And to use it, add the following lines to the file config.toml\ntheme = \"PaperMod\" [params.homeInfoParams] Title = \"Hi there!\" Content = \"Can be Info, links, about...\" The most important part for us, is the theme = \"PaperMod\", which tells Hugo to use the theme we just downloaded.\nNote that the section [params.homeInfoParams] is a configuration from the PaperMod theme. Maybe the theme you chose has different configuration options.\nLet’s take a look how is our page. First we need to start the builtin server.\npodman run --rm -ti -v $(pwd)/quickstart:/src docker.io/klakegg/hugo server Start building sites … hugo v0.107.0-2221b5b30a285d01220a26a82305906ad3291880 linux/amd64 BuildDate=2022-11-24T13:59:45Z VendorInfo=hugoguru | EN -------------------+----- Pages | 7 Paginator pages | 0 Non-page files | 0 Static files | 1 Processed images | 0 Aliases | 1 Sitemaps | 1 Cleaned | 0 Built in 15 ms Watching for changes in /src/{archetypes,assets,content,data,layouts,static,themes} Watching for config changes in /src/config.toml Environment: \"DEV\" Serving pages from memory Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender Web Server is available at http://localhost:1313/ (bind address 0.0.0.0) Press Ctrl+C to stop If you point your browser to http://127.0.0.1:1313/, you may see this:\nCreate your first Post If you read carrefully the output when you created your site, you already have a hint on how to create your post.\n2. Perhaps you want to add some content. You can add single files with \"hugo new /.\". But, how to really create your first post? Let’s say your post will be called using-hugo, it will be written in Markdown and under the section posts. So the command you will need to run is the one below:\npodman run --rm -ti -v $(pwd)/quickstart:/src \\ docker.io/klakegg/hugo new posts/using-hugo.md Content \"/src/content/posts/using-hugo.md\" created Open the file quickstart/content/posts/using-hugo.md with your favorite text editor (remember that src does not exist in your host machine’s filesystem).\nYou will notice the following header:\n--- title: \"Using Hugo\" date: 2023-02-14T21:59:34+01:00 draft: true --- The property that matter to us is the draft. As it is true, it means that our post is not ready to be published yet. So it won’t be listed in our website until this property is set to false.\nBy now, we wont change this header but will add some text below it. When you are ready, save the file and start the server again.\npodman run --rm -ti -v $(pwd)/quickstart:/src docker.io/klakegg/hugo server If you visit the site on the port 1313, you will notice that nothing changed since our last visit. Well, this is the job of the property draft. But you need to see how the post looks before publishing, so close the hugo server and run this command instead:\npodman run --rm -ti -v $(pwd)/quickstart:/src \\ docker.io/klakegg/hugo server --buildDrafts It tells Hugo to build the content marked as draft. Keep this server running until while you edit your post, Hugo will auto-reload the site as you edit it.\nNow, if you visit the site on port 1313 again, you will see all posts marked as draft too.\nConclusion With this post, I guided you too through the process of installing Hugo, creating your site and writing your post. Lots of things were not covered, either because the article is too long or because I don’t know yet. 😅\nFrom my short experience with Hugo, it seems helpful on organizing your posts and managing thei lifecycle. Could be a good choice to maintain my Tech Journal.\n",
+  "wordCount" : "1034",
+  "inLanguage": "en",
+  "datePublished": "2023-02-14T21:59:34+01:00",
+  "dateModified": "2023-02-14T21:59:34+01:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://arnaldomendoncaf.github.io/posts/using-hugo/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My tech notes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://arnaldomendoncaf.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -112,7 +176,7 @@ Nothing better than start my tech journal with a post on how to use the tool tha
     <h1 class="post-title">
       Using Hugo
     </h1>
-    <div class="post-meta"><span title='2023-02-14 21:59:34 +0100 +0100'>February 14, 2023</span>
+    <div class="post-meta"><span title='2023-02-14 21:59:34 +0100 CET'>February 14, 2023</span>
 
 </div>
   </header> 
@@ -125,8 +189,11 @@ In this post, I will walk you through the process of installing Hugo,
 configuring and publishing your first post.</p>
 <p>Nothing better than start my tech journal with a post on how to
 use the tool that I&rsquo;ll use to write my tech journal.</p>
-<p><img loading="lazy" src="/using-hugo/gopher-hero.svg" alt="Gopher Hugo"  />
-</p>
+<figure class="align-center ">
+    <img loading="lazy" src="/using-hugo/gopher-hero.svg#center"
+         alt="gopher hugo" width="200px"/> 
+</figure>
+
 <h2 id="installing-hugo">Installing Hugo<a hidden class="anchor" aria-hidden="true" href="#installing-hugo">#</a></h2>
 <p>Hugo has support for Windows, Linux, BSD and MacOS.
 This tutorial will focus on Linux. Said this, there are some ways to
