@@ -6,7 +6,19 @@
     <description>Recent content on My tech notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Feb 2023 17:02:39 +0000</lastBuildDate><atom:link href="https://arnaldomendoncaf.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Feb 2023 20:15:44 +0000</lastBuildDate><atom:link href="https://arnaldomendoncaf.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python HTTP Server</title>
+      <link>https://arnaldomendoncaf.github.io/posts/python-server/</link>
+      <pubDate>Thu, 16 Feb 2023 20:15:44 +0000</pubDate>
+      
+      <guid>https://arnaldomendoncaf.github.io/posts/python-server/</guid>
+      <description>Ever wonder about how to share a file in your home network easily? Or how to test the blog you just created on you local machine? All without the burden of downloading and configuring Nginx?
+Wonder no more! Python is here to rescue you!
+Python is shipped with a built-in library called http.server, and you can use it directly from the shell.
+Go to directory with the files you want to share and execute the command below:</description>
+    </item>
+    
     <item>
       <title>Publish your blog made with Hugo on GitHub Pages</title>
       <link>https://arnaldomendoncaf.github.io/posts/hugo-publish-to-github-pages/</link>

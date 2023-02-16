@@ -3,10 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://arnaldomendoncaf.github.io/</loc>
-    <lastmod>2023-02-15T17:02:39+00:00</lastmod>
+    <lastmod>2023-02-16T20:15:44+00:00</lastmod>
   </url><url>
     <loc>https://arnaldomendoncaf.github.io/posts/</loc>
-    <lastmod>2023-02-15T17:02:39+00:00</lastmod>
+    <lastmod>2023-02-16T20:15:44+00:00</lastmod>
+  </url><url>
+    <loc>https://arnaldomendoncaf.github.io/posts/python-server/</loc>
+    <lastmod>2023-02-16T20:15:44+00:00</lastmod>
   </url><url>
     <loc>https://arnaldomendoncaf.github.io/posts/hugo-publish-to-github-pages/</loc>
     <lastmod>2023-02-15T17:02:39+00:00</lastmod>
